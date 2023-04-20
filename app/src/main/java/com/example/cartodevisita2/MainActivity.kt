@@ -64,7 +64,15 @@ fun Rodape() {
 @Composable
 fun Contato(){
     Row() {
-        Image(painter = painterResource(id = ), contentDescription = )
+        Image(painter = painterResource(id = R.drawable.facebook),
+            contentDescription = null,
+            contentScale = ContentScale.Crop,
+            modifier = Modifier
+                .size(28.dp)
+
+        )
+        Text(
+            text = "xxxx-xxxx")
         
     }
     
@@ -78,11 +86,11 @@ fun Cabecalho() {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
-        Image(painter = painterResource(id = R.drawable.unnamed),
+        Image(painter = painterResource(id = R.drawable.logo),
             contentDescription =null,
             contentScale = ContentScale.Crop,
             modifier = Modifier
-                .aspectRatio(12f / 9f)
+                .aspectRatio(10f / 9f)
                 .clip(RoundedCornerShape(16.dp))
 
 
