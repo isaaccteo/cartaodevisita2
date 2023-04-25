@@ -6,9 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
+import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -18,6 +16,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.cartodevisita2.ui.theme.Cartãodevisita2Theme
@@ -41,7 +40,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun PlanodeFundo() {
     Image(
-        painter = painterResource(id = R.drawable.abstract_gda231a9d8_1920,),
+        painter = painterResource(R.drawable.plano_de_fundo,),
         contentDescription = null,
         contentScale = ContentScale.Crop,
 
@@ -52,7 +51,11 @@ fun PlanodeFundo() {
 }
 @Composable
 fun Rodape() {
-    Column {
+    Column(
+        modifier = Modifier,
+        verticalArrangement = Arrangement.Bottom,
+
+    ) {
         Contato()
         Contato()
         Contato()
@@ -64,18 +67,25 @@ fun Rodape() {
 @Composable
 fun Contato(){
     Row() {
-        Image(painter = painterResource(id = R.drawable.facebook),
+        Image(painter = painterResource(R.drawable.facebook),
             contentDescription = null,
             contentScale = ContentScale.Crop,
             modifier = Modifier
-                .size(28.dp)
+                .size(34.dp)
 
         )
         Text(
-            text = "xxxx-xxxx")
+            text = "xxxx-xxxx",
+            fontSize = 24.sp,
+            color = Color(250,244,254)
+        )
         
     }
     
+}
+
+fun Text(text: String, fontSize: TextUnit, lightColors: Colors) {
+
 }
 
 
@@ -86,25 +96,27 @@ fun Cabecalho() {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
-        Image(painter = painterResource(id = R.drawable.logo),
+        Image(painter = painterResource(R.drawable.lotus),
             contentDescription =null,
-            contentScale = ContentScale.Crop,
+            contentScale = ContentScale.FillHeight,
             modifier = Modifier
-                .aspectRatio(10f / 9f)
-                .clip(RoundedCornerShape(16.dp))
+                .size(100.dp)
+
 
 
         )
     Text(
-        text ="Anna Clara Mota Pedrosa da silva",
+        text ="Anna Clara Mota",
         fontSize = 23.sp,
-        fontWeight = FontWeight.Bold
+        fontWeight = FontWeight.Bold,
+        color = Color(250,244,254)
 
     )
     Text(
-        text = "estudante",
+        text = "Estudante",
         fontSize = 25.sp,
-        fontWeight = FontWeight.Bold
+        fontWeight = FontWeight.Bold,
+        color = Color(250,244,254)
 
     )
 
