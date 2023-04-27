@@ -11,7 +11,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.AndroidPaint
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
@@ -40,7 +42,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun PlanodeFundo() {
     Image(
-        painter = painterResource(R.drawable.plano_de_fundo,),
+        painter = painterResource(R.drawable.preto),
         contentDescription = null,
         contentScale = ContentScale.Crop,
 
@@ -56,18 +58,33 @@ fun Rodape() {
         verticalArrangement = Arrangement.Bottom,
 
     ) {
-        Contato()
-        Contato()
-        Contato()
-        
-        
+        Contato(
+            painter = painterResource(R.drawable.instagram),
+            text ="isaac_r2"
+        )
+        Contato(
+            painter = painterResource(R.drawable.facebook),
+            text ="isaac teodoro"
+        )
+        Contato(
+            painter = painterResource(R.drawable.whatsapp),
+            text ="11 91051-5773"
+        )
     }
-   
 }
+
 @Composable
-fun Contato(){
+fun Contato(painter: Painter, text: String){
+
+    Divider(
+        color = Color.LightGray,
+        modifier = Modifier
+            .fillMaxWidth()
+    )
+
     Row() {
-        Image(painter = painterResource(R.drawable.facebook),
+        Image(
+            painter = painter,
             contentDescription = null,
             contentScale = ContentScale.Crop,
             modifier = Modifier
@@ -75,19 +92,12 @@ fun Contato(){
 
         )
         Text(
-            text = "xxxx-xxxx",
+            text = text,
             fontSize = 24.sp,
             color = Color(250,244,254)
         )
-        
     }
-    
 }
-
-fun Text(text: String, fontSize: TextUnit, lightColors: Colors) {
-
-}
-
 
 @Composable
 fun Cabecalho() {
@@ -96,32 +106,28 @@ fun Cabecalho() {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
-        Image(painter = painterResource(R.drawable.lotus),
+        Image(painter = painterResource(R.drawable.simpson),
             contentDescription =null,
-            contentScale = ContentScale.FillHeight,
+            contentScale = ContentScale.Crop,
             modifier = Modifier
                 .size(100.dp)
-
-
+        )
+        Text(
+            text ="isaac teodoro",
+            fontSize = 23.sp,
+            fontWeight = FontWeight.Bold,
+            color = Color(250,244,254)
 
         )
-    Text(
-        text ="Anna Clara Mota",
-        fontSize = 23.sp,
-        fontWeight = FontWeight.Bold,
-        color = Color(250,244,254)
+        Text(
+            text = "estudante" ,
+            fontSize = 25.sp,
+            fontWeight = FontWeight.Bold,
+            color = Color(250,244,254)
 
-    )
-    Text(
-        text = "Estudante",
-        fontSize = 25.sp,
-        fontWeight = FontWeight.Bold,
-        color = Color(250,244,254)
+        )
 
-    )
-
-
-     }
+    }
 }
 
 
